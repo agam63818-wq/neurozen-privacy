@@ -4,14 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy – NeuroZen</title>
+  <meta name="description" content="Privacy Policy for NeuroZen - Brain Training Games. Learn how we protect your privacy and handle data." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #0d0d1a;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(124,58,237,0.12), transparent 35%),
+        radial-gradient(circle at 85% 25%, rgba(79,70,229,0.10), transparent 40%);
       color: #e0e0f0;
       min-height: 100vh;
       padding: 0 0 60px;
@@ -20,8 +29,22 @@
     header {
       background: linear-gradient(135deg, #1a0a3c 0%, #0d0d1a 100%);
       border-bottom: 1px solid #2a1a5e;
-      padding: 28px 24px 24px;
+      padding: 32px 24px 28px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(124,58,237,0.18), transparent 70%);
+      pointer-events: none;
     }
 
     .logo {
@@ -30,86 +53,164 @@
       justify-content: center;
       gap: 12px;
       margin-bottom: 8px;
+      position: relative;
     }
 
     .logo-icon {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       background: linear-gradient(135deg, #7c3aed, #4f46e5);
-      border-radius: 12px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 24px;
+      box-shadow: 0 8px 24px rgba(124,58,237,0.35);
     }
 
     .logo-text {
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 26px;
+      font-weight: 800;
       background: linear-gradient(90deg, #a78bfa, #818cf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: -0.02em;
     }
 
     .tagline {
       font-size: 13px;
       color: #6b7280;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      position: relative;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 40px 24px 0;
     }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #f0f0ff;
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
       margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #f0f0ff;
+      letter-spacing: -0.02em;
+    }
+
+    .privacy-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #14532d33;
+      border: 1px solid #166534;
+      color: #4ade80;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
     }
 
     .updated {
       font-size: 13px;
       color: #6b7280;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .intro {
-      background: linear-gradient(135deg, #1a0a3c22, #4f46e511);
+      background: linear-gradient(135deg, #1a0a3c33, #4f46e511);
       border: 1px solid #2a1a5e;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 32px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #c4b5fd;
+    }
+
+    .toc {
+      background: #111827;
+      border: 1px solid #1f2937;
       border-radius: 14px;
       padding: 20px 22px;
       margin-bottom: 36px;
-      font-size: 15px;
-      line-height: 1.7;
+    }
+
+    .toc-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #818cf8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 16px;
+      counter-reset: toc-counter;
+    }
+
+    .toc li {
+      counter-increment: toc-counter;
+      font-size: 14px;
+    }
+
+    .toc li a {
+      color: #9ca3af;
+      text-decoration: none;
+      display: flex;
+      gap: 8px;
+      transition: color 0.15s ease;
+    }
+
+    .toc li a::before {
+      content: counter(toc-counter);
+      color: #7c3aed;
+      font-weight: 700;
+      min-width: 16px;
+    }
+
+    .toc li a:hover {
       color: #c4b5fd;
     }
 
     section {
       margin-bottom: 32px;
+      scroll-margin-top: 20px;
     }
 
     h2 {
-      font-size: 17px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
       color: #a78bfa;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     h2::before {
       content: '';
       display: inline-block;
       width: 4px;
-      height: 18px;
+      height: 20px;
       background: linear-gradient(180deg, #7c3aed, #4f46e5);
       border-radius: 2px;
+      flex-shrink: 0;
     }
 
     p {
@@ -118,10 +219,19 @@
       color: #9ca3af;
     }
 
+    p + p {
+      margin-top: 10px;
+    }
+
+    strong {
+      color: #f0f0ff;
+      font-weight: 600;
+    }
+
     ul {
       list-style: none;
       padding: 0;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     ul li {
@@ -130,7 +240,7 @@
       color: #9ca3af;
       padding-left: 20px;
       position: relative;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     ul li::before {
@@ -139,7 +249,7 @@
       left: 0;
       color: #7c3aed;
       font-size: 10px;
-      top: 5px;
+      top: 6px;
     }
 
     .badge {
@@ -151,25 +261,95 @@
       font-weight: 600;
       padding: 3px 10px;
       border-radius: 20px;
-      margin-left: 8px;
+      margin-left: 4px;
       vertical-align: middle;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-top: 14px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e0e0f0;
+      margin-bottom: 6px;
     }
 
     .contact-box {
       background: #111827;
       border: 1px solid #1f2937;
       border-radius: 14px;
-      padding: 20px 22px;
+      padding: 24px 24px;
       margin-top: 12px;
     }
 
-    .contact-box a {
-      color: #818cf8;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7c3aed33, #4f46e533);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-item div p {
+      margin: 0;
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-item a, .contact-item span.value {
+      color: #e0e0f0;
+      font-size: 15px;
+      font-weight: 600;
       text-decoration: none;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
+    .contact-item a:hover {
+      color: #818cf8;
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(124,58,237,0.3);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(124,58,237,0.4);
     }
 
     footer {
@@ -179,6 +359,59 @@
       border-top: 1px solid #1f2937;
       font-size: 13px;
       color: #4b5563;
+    }
+
+    footer a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #818cf8;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(124,58,237,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 50;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #backToTop:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 520px) {
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -194,69 +427,146 @@
 
 <div class="container">
 
-  <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: June 22, 2026</div>
+  <div class="title-row">
+    <h1>Privacy Policy</h1>
+    <span class="privacy-pill">🔒 Privacy-First App</span>
+  </div>
+  <div class="updated">Last updated: June 22, 2026 &nbsp;·&nbsp; Effective Date: June 22, 2026</div>
 
   <div class="intro">
-    NeuroZen is a brain training app built for everyone. We are committed to protecting your privacy. This policy explains clearly what data we collect (spoiler: almost none), and how your information is handled.
+    NeuroZen is a brain training app built for everyone. We are committed to protecting your privacy and being fully transparent about how our app works. This Privacy Policy explains clearly what data we collect (spoiler: almost none), how it is used, and your rights regarding your information.
   </div>
 
-  <section>
+  <div class="toc">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#info-collect">Information We Collect</a></li>
+      <li><a href="#local-data">Data Stored on Your Device</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#internet">Internet Permission</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Rights & Choices</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <section id="info-collect">
     <h2>Information We Collect <span class="badge">Minimal</span></h2>
-    <p>NeuroZen does <strong style="color:#f0f0ff;">not</strong> require you to create an account or provide any personal information to use the app.</p>
+    <p>NeuroZen does <strong>not</strong> require you to create an account or provide any personal information to use the app. We have designed NeuroZen from the ground up to work without collecting personal data.</p>
     <ul>
       <li>No name, email, or phone number is collected</li>
       <li>No location data is collected or tracked</li>
       <li>No payment or financial information is collected</li>
-      <li>No device identifiers are collected or stored</li>
+      <li>No device identifiers, advertising IDs, or unique identifiers are collected or stored</li>
     </ul>
   </section>
 
-  <section>
+  <section id="local-data">
     <h2>Data Stored on Your Device</h2>
-    <p>All your game progress, brain scores, streaks, and settings are stored <strong style="color:#f0f0ff;">locally on your device only</strong>. This data never leaves your phone and is not sent to any server.</p>
+    <p>All your game progress, brain scores, streaks, and settings are stored <strong>locally on your device only</strong>, using your device's local storage. This data never leaves your phone and is not sent to any server, cloud service, or third party.</p>
     <ul>
       <li>Brain Score and game history</li>
       <li>Day streaks and XP progress</li>
       <li>App preferences and settings</li>
     </ul>
+    <div class="card">
+      <div class="card-title">🗑️ Deleting your data</div>
+      <p style="margin-top:0;">Since all data lives only on your device, you can permanently erase it at any time by clearing the app's storage/cache from your device settings, or by uninstalling NeuroZen.</p>
+    </div>
   </section>
 
-  <section>
+  <section id="third-party">
     <h2>Third-Party Services</h2>
-    <p>NeuroZen does <strong style="color:#f0f0ff;">not</strong> use any third-party analytics, advertising SDKs, or tracking tools. We do not share any data with third parties.</p>
+    <p>NeuroZen does <strong>not</strong> use any third-party analytics, advertising SDKs, crash reporting, or tracking tools. We do not sell, rent, or share any data with third parties, because no personal data is ever collected in the first place.</p>
   </section>
 
-  <section>
+  <section id="internet">
     <h2>Internet Permission</h2>
-    <p>NeuroZen works fully <strong style="color:#f0f0ff;">offline</strong>. The app may request internet access only for initial loading as a Progressive Web App (PWA/TWA). No data is transmitted during this process.</p>
+    <p>NeuroZen works fully <strong>offline</strong>. The app may request internet access only for initial loading as a Progressive Web App (PWA/TWA) or for occasional app updates. No personal data is transmitted during this process.</p>
   </section>
 
-  <section>
+  <section id="security">
+    <h2>Data Security</h2>
+    <p>Although NeuroZen does not collect or transmit personal data, we still take reasonable technical measures to ensure that any information stored locally on your device remains safe from unauthorized access, in line with your device's own operating system security features.</p>
+  </section>
+
+  <section id="rights">
+    <h2>Your Rights & Choices</h2>
+    <p>Because NeuroZen does not collect, store, or process any personal data on our servers, there is no personal data for us to access, export, or delete on your behalf. You remain in full control of any data stored on your own device at all times, and can remove it by clearing app storage or uninstalling the app.</p>
+  </section>
+
+  <section id="children">
     <h2>Children's Privacy</h2>
-    <p>NeuroZen is suitable for users aged 6 and above. We do not knowingly collect any personal information from children. Since no personal data is collected from any user, children's privacy is fully protected by design.</p>
+    <p>NeuroZen is suitable for users aged 6 and above. We do not knowingly collect any personal information from children or any other user. Since no personal data is collected from anyone, children's privacy is fully protected by design.</p>
   </section>
 
-  <section>
+  <section id="changes">
     <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically.</p>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this page periodically to stay informed.</p>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or feedback about this Privacy Policy or NeuroZen, please don't hesitate to reach out to us.</p>
     <div class="contact-box">
-      <p>If you have any questions about this Privacy Policy, you can reach us at:</p>
-      <br>
-      <p>📧 Email: <a href="mailto:agamk5651@gmail.com">agamroy.dev@gmail.com</a></p>
-      <p>🌐 App: NeuroZen – Brain Training Games</p>
-      <p>📍 India</p>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <p>Email</p>
+          <a href="mailto:nexzenstudio.dev@gmail.com">nexzenstudio.dev@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🧠</div>
+        <div>
+          <p>App</p>
+          <span class="value">NeuroZen – Brain Training Games</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🏢</div>
+        <div>
+          <p>Developer</p>
+          <span class="value">NexZen Studio</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <p>Location</p>
+          <span class="value">India</span>
+        </div>
+      </div>
+      <a class="btn-email" href="mailto:nexzenstudio.dev@gmail.com">✉️ Email Us</a>
     </div>
   </section>
 
   <footer>
-    © 2026 NeuroZen. All rights reserved. &nbsp;·&nbsp; Made with 🧠 in India
+    © 2026 NeuroZen by NexZen Studio. All rights reserved. &nbsp;·&nbsp; Made with 🧠 in India &nbsp;·&nbsp;
+    <a href="mailto:nexzenstudio.dev@gmail.com">nexzenstudio.dev@gmail.com</a>
   </footer>
 
 </div>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>
